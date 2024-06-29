@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telugu Text PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+          font-family: Noto Sans Telugu, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1><span id="teluguText">టెక్స్ట్ ను పత్రంలో ముద్రించండి</span></h1>
+
+<button onclick="downloadPDF()">Download PDF</button>
+
+<script>
+    function downloadPDF() {
+      const doc = new jsPDF();
+      const text = document.getElementById("teluguText").textContent;
+      doc.text(20, 20, text);
+      doc.save("telugu_text.pdf");
+    }
+</script>
+</body>
+</html>
